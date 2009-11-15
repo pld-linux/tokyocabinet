@@ -8,6 +8,10 @@ Group:		Libraries
 Source0:	http://1978th.net/tokyocabinet/%{name}-%{version}.tar.gz
 # Source0-md5:	51741ff17c2aefeb35779db2156fb55f
 URL:		http://1978th.net/tokyocabinet/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	bzip2-devel
+BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
