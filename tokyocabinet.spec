@@ -75,18 +75,19 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/tc*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libtokyocabinet.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libtokyocabinet.so.?
 %{_datadir}/%{name}
 %{_mandir}/man1/tc*.1*
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/*
-%{_libdir}/lib*.so
+%{_libdir}/libtokyocabinet.so
 %{_includedir}/tc*.h
-%{_pkgconfigdir}/*.pc
+%{_pkgconfigdir}/tokyocabinet.pc
 %{_mandir}/man3/*.3*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libtokyocabinet.a
