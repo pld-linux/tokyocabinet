@@ -1,12 +1,15 @@
+# TODO:
+# warning: Installed (but unpackaged) file(s) found:
+#    /usr/lib/tcawmgr.cgi
 Summary:	Supreme Database Management Library
 Summary(pl.UTF-8):	Supreme Database Management Library
 Name:		tokyocabinet
-Version:	1.4.41
+Version:	1.4.45
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://1978th.net/tokyocabinet/%{name}-%{version}.tar.gz
-# Source0-md5:	f5cbcb55286df6bbdedd165f33fdfb5d
+# Source0-md5:	4e891fef32663c707ae0156b47c7ee1f
 URL:		http://1978th.net/tokyocabinet/
 BuildRequires:	autoconf
 BuildRequires:	automake
