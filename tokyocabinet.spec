@@ -4,12 +4,12 @@
 Summary:	Supreme Database Management Library
 Summary(pl.UTF-8):	Supreme Database Management Library
 Name:		tokyocabinet
-Version:	1.4.45
+Version:	1.4.46
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://1978th.net/tokyocabinet/%{name}-%{version}.tar.gz
-# Source0-md5:	4e891fef32663c707ae0156b47c7ee1f
+# Source0-md5:	341dadd1f3d68760e350f7e731111786
 URL:		http://1978th.net/tokyocabinet/
 BuildRequires:	autoconf
 BuildRequires:	automake
