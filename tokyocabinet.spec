@@ -13,7 +13,7 @@ Release:	1
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	http://fallabs.com/tokyocabinet/%{name}-%{version}.tar.gz
-# Source0-md5:	341dadd1f3d68760e350f7e731111786
+# Source0-md5:	3d94fe2aebf5d9ff0478ed895bc46fc9
 URL:		http://fallabs.com/tokyocabinet/
 BuildRequires:	autoconf
 BuildRequires:	automake
