@@ -9,7 +9,7 @@ Summary:	Supreme Database Management Library
 Summary(pl.UTF-8):	Supreme Database Management Library
 Name:		tokyocabinet
 Version:	1.4.47
-Release:	1
+Release:	2
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	http://fallabs.com/tokyocabinet/%{name}-%{version}.tar.gz
@@ -124,6 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/tctdb.h
 %{_includedir}/tcutil.h
 %{_pkgconfigdir}/%{name}.pc
+%dir %{_datadir}/idl/%{name}
 %{_datadir}/idl/%{name}/tokyocabinet.idl
 %{_mandir}/man3/*.3*
 %{_examplesdir}/%{name}-%{version}
