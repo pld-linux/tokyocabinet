@@ -1,12 +1,12 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static libraries
-
+#
 # TODO:
 # warning: Installed (but unpackaged) file(s) found:
 #    /usr/lib/tcawmgr.cgi
-Summary:	Supreme Database Management Library
-Summary(pl.UTF-8):	Supreme Database Management Library
+Summary:	Modern implementation of DBM
+Summary(pl.UTF-8):	Nowoczesna implementacja DBM
 Name:		tokyocabinet
 Version:	1.4.47
 Release:	2
@@ -31,13 +31,26 @@ length. Both binary data and character string can be used as a key and
 a value. There is neither concept of data tables nor data types.
 Records are organized in hash table, B+ tree, or fixed-length array.
 
+%description -l pl.UTF-8
+Tokyo Cabinet to biblioteka procedur do zarządzania bazą danych. Baza
+danych jest prostym plikiem danych zawierającym rekordy, z których
+każdy jest parą składającą się z klucza i wartości. Każdy klucz i
+wartość to szereg bajtów o zmiennej długości. Jako klucze i wartości
+mogą być używane dane binarne i znakowe. Nie ma pojęcia tabel ani
+typów danych. Rekordy są przechowywane w tablicy haszującej, B-drzewie
+lub tablicy stałej długości.
+
 %package libs
 Summary:	Shared library for Tokyo Cabinet
+Summary(pl.UTF-8):	Biblioteka współdzielona Tokyo Cabinet
 Group:		Libraries
-Conflicts:	%{name} < 1.4.47-1
+Conflicts:	tokyocabinet < 1.4.47-1
 
 %description libs
 Shared library for Tokyo Cabinet.
+
+%description libs -l pl.UTF-8
+Biblioteka współdzielona Tokyo Cabinet.
 
 %package devel
 Summary:	Header files for tokyocabinet library
@@ -81,6 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# packaged as %doc
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/%{name}/doc
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/{COPYING,ChangeLog}
 
@@ -105,18 +119,18 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/tchmgr
 %attr(755,root,root) %{_bindir}/tctmgr
 %attr(755,root,root) %{_bindir}/tcucodec
-%attr(755,root,root) %{_bindir}/*test
+%attr(755,root,root) %{_bindir}/tc*test
 %{_mandir}/man1/tc*.1*
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib%{name}.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/lib%{name}.so.9
+%attr(755,root,root) %{_libdir}/libtokyocabinet.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libtokyocabinet.so.9
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/*
-%{_libdir}/libtokyocabinet.so
+%doc doc/*.{css,html,png,pdf}
+%attr(755,root,root) %{_libdir}/libtokyocabinet.so
 %{_includedir}/tcadb.h
 %{_includedir}/tcbdb.h
 %{_includedir}/tcfdb.h
@@ -126,7 +140,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/%{name}.pc
 %dir %{_datadir}/idl/%{name}
 %{_datadir}/idl/%{name}/tokyocabinet.idl
-%{_mandir}/man3/*.3*
+%{_mandir}/man3/tc*.3*
+%{_mandir}/man3/tokyocabinet.3*
 %{_examplesdir}/%{name}-%{version}
 
 %if %{with static_libs}
