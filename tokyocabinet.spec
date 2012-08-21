@@ -8,12 +8,12 @@
 Summary:	Modern implementation of DBM
 Summary(pl.UTF-8):	Nowoczesna implementacja DBM
 Name:		tokyocabinet
-Version:	1.4.47
-Release:	2
+Version:	1.4.48
+Release:	1
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	http://fallabs.com/tokyocabinet/%{name}-%{version}.tar.gz
-# Source0-md5:	3d94fe2aebf5d9ff0478ed895bc46fc9
+# Source0-md5:	fd03df6965f8f56dd5b8518ca43b4f5e
 URL:		http://fallabs.com/tokyocabinet/
 BuildRequires:	autoconf
 BuildRequires:	automake
